@@ -51,6 +51,7 @@ from . import (
     convnextv2,
     cpm,
     cpmant,
+    cpmbee,
     ctrl,
     cvt,
     data2vec,
