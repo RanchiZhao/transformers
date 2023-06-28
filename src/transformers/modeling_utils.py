@@ -2896,6 +2896,7 @@ class PreTrainedModel(nn.Module, ModuleUtilsMixin, GenerationMixin, PushToHubMix
                 keep_in_fp32_modules=keep_in_fp32_modules,
             )
 
+        
         model.is_loaded_in_4bit = load_in_4bit
         model.is_loaded_in_8bit = load_in_8bit
         model.is_quantized = load_in_8bit or load_in_4bit
