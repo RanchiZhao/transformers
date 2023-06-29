@@ -493,7 +493,7 @@ def set_initialized_submodules(model, state_dict_keys):
         if len(set(module.state_dict().keys()) - set(loaded_keys)) == 0:
             module._is_hf_initialized = True
 
-
+#load_model
 def _load_state_dict_into_model(model_to_load, state_dict, start_prefix):
     # Convert old format to new format if needed from a PyTorch state_dict
     old_keys = []
@@ -3170,6 +3170,7 @@ class PreTrainedModel(nn.Module, ModuleUtilsMixin, GenerationMixin, PushToHubMix
                 if param_device_map[p] == "disk"
             }
 
+        #load state_dict here
         if state_dict is not None:
             # Whole checkpoint
             mismatched_keys = _find_mismatched_keys(
