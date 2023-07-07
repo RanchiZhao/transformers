@@ -1073,7 +1073,7 @@ class Trainer:
         Trainer's init through `optimizers`, or subclass and override this method in a subclass.
         """
         opt_model = self.model_wrapped if is_sagemaker_mp_enabled() else self.model
-
+        
         if self.optimizer is None:
             decay_parameters = get_parameter_names(opt_model, ALL_LAYERNORM_LAYERS)
             decay_parameters = [name for name in decay_parameters if "bias" not in name]
